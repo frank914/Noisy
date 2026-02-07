@@ -174,6 +174,33 @@
         <h1>更新日誌 Changelog</h1>
 
         <div class="timeline">
+            <!-- v3.1 -->
+            <div class="entry">
+                <div class="version">v3.1 (Latest) <span class="date">2026-02-08</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-new">[NEW]</span> 新增 Strategy 2 (ICT Breaker Block) - 獨立的趨勢突破策略，支援獨立參數設定與風控</li>
+                        <li><span class="tag-new">[NEW]</span> 多策略並行系統 - 支援同時運行 Main 與 S2 策略，倉位與信號互不干擾</li>
+                        <li><span class="tag-new">[NEW]</span> 回測系統升級 - 新增「策略選擇」功能，可針對單一或多個策略進行歷史回測</li>
+                        <li><span class="tag-fix">[FIX]</span> 回測邏輯優化 - 支援強制啟用 S2 進行回測驗證，即使實倉設定為關閉</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- v3.0 -->
+            <div class="entry">
+                <div class="version">v3.0 (Major Release) <span class="date">2026-02-04</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-new">[NEW]</span> 新增網路狀態即時監控 (🟢/🔴 指示燈) - 自動檢測 API 與網路連線狀況</li>
+                        <li><span class="tag-fix">[FIX]</span> 徹底修復設定檔重置 Bug - 調整初始化順序並新增安全性保護機制，確保設定永不丟失</li>
+                        <li><span class="tag-fix">[FIX]</span> 修正市場價格更新 Bug - 解決符號格式不匹配與 UI 重新整理邏輯，確保價格即時跳動</li>
+                        <li><span class="tag-new">[NEW]</span> 新增網路診斷修復工具 (network_repair.bat) - 一鍵修復 DNS 與網路連線異常</li>
+                        <li><span class="tag-fix">[FIX]</span> 移除所有除錯用的 Log 輸出，優化運作效率與整潔度</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- v2.0 -->
             <div class="entry">
                 <div class="version">v2.0 (Stable) <span class="date">2026-02-03</span></div>
