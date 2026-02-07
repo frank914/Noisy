@@ -174,12 +174,27 @@
         <h1>更新日誌 Changelog</h1>
 
         <div class="timeline">
-            <!-- v3.1 -->
+            <!-- v3.2 -->
             <div class="entry">
-                <div class="version">v3.1 (Latest) <span class="date">2026-02-08</span></div>
+                <div class="version">v3.2 (Latest) <span class="date">2026-02-08</span></div>
                 <div class="changes">
                     <ul>
-                        <li><span class="tag-new">[NEW]</span> 新增 Strategy 2 (ICT Breaker Block) - 獨立的趨勢突破策略，支援獨立參數設定與風控</li>
+                        <li><span class="tag-new">[NEW]</span> Strategy 2 止損優化 - 使用 Breaker Block 作為結構性止損，更具意義</li>
+                        <li><span class="tag-new">[NEW]</span> S2 延遲進場確認 - 可選功能，等待 N 根 K 線確認趨勢方向後再進場</li>
+                        <li><span class="tag-fix">[FIX]</span> 修正回測 UnboundLocalError - 解決 S2 策略開倉時 final_dist 變數未定義的錯誤
+                        </li>
+                        <li><span class="tag-fix">[FIX]</span> 壓力回踩追蹤止損 Toggle Bug 修正 - 確保關閉時完全停止運作</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- v3.1 -->
+            <div class="entry">
+                <div class="version">v3.1 <span class="date">2026-02-08</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-new">[NEW]</span> 新增 Strategy 2 (ICT Breaker Block) - 獨立的趨勢突破策略，支援獨立參數設定與風控
+                        </li>
                         <li><span class="tag-new">[NEW]</span> 多策略並行系統 - 支援同時運行 Main 與 S2 策略，倉位與信號互不干擾</li>
                         <li><span class="tag-new">[NEW]</span> 回測系統升級 - 新增「策略選擇」功能，可針對單一或多個策略進行歷史回測</li>
                         <li><span class="tag-fix">[FIX]</span> 回測邏輯優化 - 支援強制啟用 S2 進行回測驗證，即使實倉設定為關閉</li>
