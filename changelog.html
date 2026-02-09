@@ -174,6 +174,34 @@
         <h1>更新日誌 Changelog</h1>
 
         <div class="timeline">
+            <!-- v5.0 -->
+            <div class="entry">
+                <div class="version">v5.0 (Major Milestone) <span class="date">2026-02-09</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-new">[NEW]</span> <strong>自動更新檢查機制：</strong>控制台啟動時會自動檢查新版本，並提供直接下載按鈕。</li>
+                        <li><span class="tag-new">[NEW]</span> <strong>Google 雲端直接下載：</strong>與 Google Drive
+                            整合，支援一鍵點擊後自動下載最新版本執行檔。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>全幣種精度對齊 (Precision Fix)：</strong>移除硬編碼截斷，動態適配
+                            BTC, DOGE, XRP 等所有幣種的下單精度。</li>
+                        <li><span class="tag-fix">[FIX]</span>
+                            <strong>止損單撤單邏輯優化：</strong>確保移動止損與平倉時，舊的計畫委託單能被正確撤銷，避免掛單衝突。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- v3.3 -->
+            <div class="entry">
+                <div class="version">v3.3 (Latest) <span class="date">2026-02-08</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><strong>[S2] 移除強制 EMA 過濾：</strong>現在可以關閉 EMA200 趨勢過濾，純粹依據 Breaker Block 結構進場。</li>
+                        <li><strong>[S2] 動態止盈 (Next BB TP)：</strong>進場後自動搜尋反向 Breaker Block 作為結構性止盈目標。</li>
+                        <li><strong>[UI]</strong> Strategy 2 設定頁面新增相關開關與參數。</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- v3.2 -->
             <div class="entry">
                 <div class="version">v3.2 (Latest) <span class="date">2026-02-08</span></div>
