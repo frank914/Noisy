@@ -174,6 +174,25 @@
         <h1>更新日誌 Changelog</h1>
 
         <div class="timeline">
+            <!-- v5.1 -->
+            <div class="entry">
+                <div class="version">v5.1 (Performance Recovery) <span class="date">2026-02-10</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-new">[NEW]</span> <strong>Strategy 2 邏輯完整還原：</strong>參考高績效備份檔，重新實作「區間判定
+                            (Zone Entry)」與「強勢K保盈」機制，找回原有的進場品質。</li>
+                        <li><span class="tag-new">[NEW]</span> <strong>大時區優先狙擊模式 (HTF Only)：</strong>支援僅依據 1H BB
+                            結構進行交易，徹底過濾 5M 小時區的震盪雜訊。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>下單頻率優化 (Index
+                                Lockout)：</strong>實作結構索引鎖定，確保同一個結構在平倉後不會立即重複進場。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>訊號日誌增強：</strong>日誌中明確標註訊號來源 (HTF) 或
+                            (LTF)，方便後續績效分析。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S2 分頁崩潰修復：</strong>修正還原舊版邏輯後缺少的 UI 參數欄位，確保設定載入穩定。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- v5.0 -->
             <div class="entry">
                 <div class="version">v5.0 (Major Milestone) <span class="date">2026-02-09</span></div>
@@ -185,7 +204,8 @@
                         <li><span class="tag-fix">[FIX]</span> <strong>全幣種精度對齊 (Precision Fix)：</strong>移除硬編碼截斷，動態適配
                             BTC, DOGE, XRP 等所有幣種的下單精度。</li>
                         <li><span class="tag-fix">[FIX]</span>
-                            <strong>止損單撤單邏輯優化：</strong>確保移動止損與平倉時，舊的計畫委託單能被正確撤銷，避免掛單衝突。</li>
+                            <strong>止損單撤單邏輯優化：</strong>確保移動止損與平倉時，舊的計畫委託單能被正確撤銷，避免掛單衝突。
+                        </li>
                     </ul>
                 </div>
             </div>
