@@ -174,6 +174,22 @@
         <h1>更新日誌 Changelog</h1>
 
         <div class="timeline">
+            <!-- v6.0 -->
+            <div class="entry">
+                <div class="version">v6.0 (Build & Assets Optimization) <span class="date">2026-02-14</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-new">[NEW]</span> <strong>打包流程重做：</strong>重構 `build_exe.bat`，設定檔不再打包進
+                            EXE，改為外部讀取，確保隱私與擴展性。</li>
+                        <li><span class="tag-new">[NEW]</span> <strong>資源路徑優化：</strong>修復 `logo.png` 載入失敗問題，優化 `sites/`
+                            HTML 整合。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>版本全同步：</strong>主程式、公告與日誌全面同步至 v6.0。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>穩定性增強：</strong>確保 `strategy3` 與
+                            `run_backtest_core` 在打包環境下正確載入。</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- v5.2 -->
             <div class="entry">
                 <div class="version">v5.2 (Performance & Strategy) <span class="date">2026-02-12</span></div>
