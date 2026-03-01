@@ -174,6 +174,38 @@
         <h1>更新日誌 Changelog</h1>
 
         <div class="timeline">
+            <!-- v7.0 -->
+            <div class="entry">
+                <div class="version">v7.0 (S4 Exit Overhaul & Sync) <span class="date">2026-03-01</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-new">[NEW]</span> <strong>S4 出場系統全面重構：</strong>移除 S4 舊有 Fib/Climax/Pin/TypeC/RevAB 出場規則，改用 S3 式極值拉回 + 箱體套保 + 大K保盈三層防護，BTC 回測盈利提升 133%。</li>
+                        <li><span class="tag-new">[NEW]</span> <strong>S3/S4 統一使用 BTC_USDT 出場規則：</strong>回測與實盤均自動套用 BTC_USDT_PERP 的出場設定，確保一致性。</li>
+                        <li><span class="tag-new">[NEW]</span> <strong>Fib 擴展階梯止盈預設值優化：</strong>七層階梯從 1.0R 開始，含分批平倉比例（累計 100%），預設即可用。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>LIVE / 回測 / 內建回測三路完全同步：</strong>逐條比對 12 項出場功能，修復 3 處 LIVE 遺漏（極值拉回、箱體套保、apply_tp），確保 S1-S4 所有策略行為一致。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S4 箱體跌破泛用化：</strong>Box Exit 變數改為泛用 (_box_htf_data/_box_h_idx/_box_atr_vals)，S3/S4 共用同一套邏輯。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- v6.5 -->
+            <div class="entry">
+                <div class="version">v6.5 (Epic Overhaul & S4 Release) <span class="date">2026-02-20</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-new">[NEW]</span> <strong>Strategy 3 大陽K回調邏輯：</strong>全核心重寫，偵測大時區強勢突破後，於
+                            LTF 等待合理回踩（大陽K結構支持位）進場，大幅提升進場勝率與穩定性。</li>
+                        <li><span class="tag-new">[NEW]</span> <strong>Strategy 4
+                                正式上線：</strong>新增盤整帶(Box)偵測與形態突破策略，提供更多樣化的市場應對方案。</li>
+                        <li><span class="tag-new">[NEW]</span> <strong>完整設定導出：</strong>「匯出設定」功能現在完整包含 S1、S2、S3、S4
+                            的所有參數，支援一鍵備份全策略配置。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>回測預熱完全同步：</strong>修復 LIST 與 BATCH
+                            的啟動落差，現在回測路徑與實盤/模擬倉的「暖機」流程完全對等。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>進度條顯示修復：</strong>針對全歷史預熱模式優化進度計算，回測狀態更透明。</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- v6.0 -->
             <div class="entry">
                 <div class="version">v6.0 (Build & Assets Optimization) <span class="date">2026-02-14</span></div>

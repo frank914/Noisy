@@ -203,10 +203,34 @@
         </header>
 
         <section class="announcements">
+            <!-- v7.0 -->
+            <article class="card">
+                <div class="card-date">2026.03.01</div>
+                <h2>v7.0 S4 出場系統重構 - 三路完全同步 <span class="tag new">NEW</span></h2>
+                <p>Noisy Bitget Trader v7.0 帶來 S4 出場邏輯的史詩級重構！
+                    移除所有舊式 ExitRule 出場（Fib/Climax/Pin/TypeC/RevAB），全面改用 S3 式三層防護：極值拉回、箱體套保、大K保盈。
+                    BTC 回測盈利從 +93 USDT 躍升至 +217 USDT（+133%）。
+                    同時徹底比對 LIVE、回測引擎、內建回測三路的 12 項出場邏輯，修復所有遺漏，達成完全同步。
+                    S1/S2 策略維持原有行為不受影響。建議所有用戶立即升級。
+                </p>
+            </article>
+
+            <!-- v6.5 -->
+            <article class="card">
+                <div class="card-date">2026.02.20</div>
+                <h2>v6.5 史詩級改版 - S3 大陽K回調與 S4 全新上線 <span class="tag new">NEW</span></h2>
+                <p>Noisy Bitget Trader v6.5 迎來核心邏輯大改！
+                    **Strategy 3 徹底重構**：改為「大陽K突破回踩」邏輯，專注捕捉強勢爆發後的第二波上車機會，大幅提升進場穩定性。
+                    **正式實裝 Strategy 4**：全新盤整帶突破策略，支援多種形態自動偵測。
+                    **數據對齊與導出優化**：修復了單幣與批次回測的預熱落差，並確保「匯出設定」完整包含 S1-S4 所有策略參數。
+                    這是一個追求「實盤回測一致性」的終極版本。
+                </p>
+            </article>
+
             <!-- v6.0 -->
             <article class="card">
                 <div class="card-date">2026.02.14</div>
-                <h2>v6.0 重大更新 - 打包邏輯重構與 v6.0 正式上線 <span class="tag important">LATEST</span></h2>
+                <h2>v6.0 重大更新 - 打包邏輯重構與 v6.0 正式上線</h2>
                 <p>Noisy Bitget Trader 進入 v6.0 時代！
                     本次更新針對打包流程進行了全面重構：移除了封裝在內部的設定檔，現在設定檔（.json）位於執行檔外部，方便隨時編輯且不再因更新而遺失。
                     同步修復了 logo.png 顯示問題，並確保 Strategy 3 與所有子模組完美運作。
