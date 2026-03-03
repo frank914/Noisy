@@ -174,6 +174,32 @@
         <h1>更新日誌 Changelog</h1>
 
         <div class="timeline">
+            <!-- v8.2 -->
+            <div class="entry">
+                <div class="version">v8.2 (Backtest/Live Alignment) <span class="date">2026-03-03</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S3 回測數據源對齊：</strong>回測 S3 HTF/LTF/Weekly/Daily 數據源從 Bitget 改為 Binance，與實盤掃描一致，消除因交易所價差導致的 Fib 水位偏移。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S4 出場冷卻預設值對齊：</strong>實盤 exit_cooldown_bars fallback 從 0 改為 48（對齊回測與 Strategy4Config 預設值），避免實盤無冷卻而過度開倉。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S3 實盤信號參數補齊：</strong>compute_s3_signal 補傳 h_struct、d_trend、current_time、htf_ms、ltf_ms 參數，對齊回測完整調用。</li>
+                        <li><span class="tag-new">[NEW]</span> <strong>MODE_OFF 幣種趨勢顯示：</strong>關閉模式的幣種仍計算並顯示趨勢方向（trend_only 掃描），不再永遠顯示 "—"。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>無訊號結果回傳趨勢：</strong>Worker 的 ok=False 掃描結果也包含趨勢值，consume_worker_out 在無訊號時也更新趨勢欄位。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- v8.1 -->
+            <div class="entry">
+                <div class="version">v8.1 (S3/S4 Live Signal Fix) <span class="date">2026-03-03</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S3/S4 策略實盤永遠不觸發：</strong>修復 consume_worker_out 中 MODE_OFF 檢查錯誤阻擋 S3/S4 信號的致命 Bug。S3/S4 獨立掃描在 Worker 端正確產生信號，但回到主線程後因讀取 MAIN 策略的 mode=OFF 而被丟棄，導致 S3/S4 永遠無法開倉。現在 MODE_OFF 只阻擋 MAIN/S2。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S3/S4 不受 PROMPT 模式干擾：</strong>S3/S4 有自己的啟用開關，不應受 MAIN 策略的「手動確認」模式影響。現在 S3/S4 信號一律自動開倉。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S3 全域配置注入：</strong>修復 S3 信號處理時使用預設 Strategy3Config（金額/槓桿錯誤）的問題，新增與 S4 相同的全域配置注入機制 (cfg.strategy3 = global_s3_cfg)。</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- v8.0 -->
             <div class="entry">
                 <div class="version">v8.0 (Live Trading Critical Fix) <span class="date">2026-03-03</span></div>
