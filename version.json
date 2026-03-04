@@ -1,5 +1,5 @@
 {
-  "version": "v8.2",
-  "changelog": "正式完整版 S3.S4修復",
-  "download_url": "https://github.com/frank914/Noisy/releases/download/8.2/NoisyBitgetTrader_v8.2.exe"
+  "version": "v8.4",
+  "changelog": "修復策略2.3.4 大量bug 以及嘗試修正自動平倉問題 (戰爭時期建議小倉)",
+  "download_url": "https://github.com/frank914/Noisy/releases/download/8.4/NoisyBitgetTrader_v8.4.exe"
 }
