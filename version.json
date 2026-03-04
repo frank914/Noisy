@@ -1,5 +1,5 @@
 {
-  "version": "v8.4",
-  "changelog": "修復策略2.3.4 大量bug 以及嘗試修正自動平倉問題 (戰爭時期建議小倉)",
-  "download_url": "https://github.com/frank914/Noisy/releases/download/8.4/NoisyBitgetTrader_v8.4.exe"
+  "version": "v8.5",
+  "changelog": "修復掛損掛錯問題、開倉自動轉倉別修復、加部分防呆",
+  "download_url": "https://github.com/frank914/Noisy/releases/download/8.5/NoisyBitgetTrader_v8.5.exe"
 }
