@@ -174,9 +174,9 @@
         <h1>更新日誌 Changelog</h1>
 
         <div class="timeline">
-            <!-- v8.6 -->
+            <!-- v8.7 -->
             <div class="entry">
-                <div class="version">v8.6 (UI Polish & S3/S4 Fix) <span class="date">2026-03-07</span></div>
+                <div class="version">v8.7 (S3/S4 Full Fix) <span class="date">2026-03-07</span></div>
                 <div class="changes">
                     <ul>
                         <li><span class="tag-fix">[CRITICAL]</span> <strong>S3/S4 策略無法開單修復：</strong>request_scans() 定時掃描未同步 UI checkbox → config，導致 global_s3_cfg.enabled / global_s4_cfg.enabled 始終為 False，S3/S4 掃描在 Worker 端被跳過。</li>
@@ -184,6 +184,12 @@
                         <li><span class="tag-new">[NEW]</span> <strong>交易紀錄方向美化：</strong>方向欄位從純文字「多/空」改為帶顏色箭頭「▲ 做多」(綠) /「▼ 做空」(紅)，交易紀錄、交易所實倉、模擬倉位三處統一風格。</li>
                         <li><span class="tag-new">[NEW]</span> <strong>損益% 改為 ROI%：</strong>交易紀錄的百分比從純價格變動%改為基於保證金的 ROI%（= 價格變動% × 槓桿），更準確反映實際投入資金的報酬率。</li>
                         <li><span class="tag-fix">[FIX]</span> <strong>移除無效的模擬倉位按鈕：</strong>移除「全部平倉」與「修改停損」按鈕（功能無實際意義），簡化 UI。</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>S3 LTF volume KeyError：</strong>S3 掃描 LTF 數據用 x['vol'] 直接存取，Binance 回傳 key 為 'volume' → 每次 S3 掃描都 KeyError 被靜默吞掉，S3 從未成功產生信號。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S4 無信號時未回傳結果：</strong>S4 compute 結果為「無」時沒有回傳消息，導致 consume 端無法更新狀態。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S3 RevCheck volume 安全存取：</strong>S3 結構反轉檢查的 HTF volume 用 bare x["volume"] → 改為 .get() 安全寫法。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>ROI% 改用實際損益計算：</strong>原 ROI = 價格% × 槓桿（不含手續費），改為 USDT損益 / 保證金，確保 ROI% 與 USDT 損益方向一致。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>移除右側重複交易紀錄 Tab：</strong>交易紀錄只在左下角顯示，清空按鈕搬至左下角。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>Worker log 消息處理：</strong>Worker 端 kind="log" 消息原先無人處理，新增 consume handler 顯示至系統日誌。</li>
                     </ul>
                 </div>
             </div>
