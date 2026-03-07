@@ -174,6 +174,20 @@
         <h1>更新日誌 Changelog</h1>
 
         <div class="timeline">
+            <!-- v8.6 -->
+            <div class="entry">
+                <div class="version">v8.6 (UI Polish & S3/S4 Fix) <span class="date">2026-03-07</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>S3/S4 策略無法開單修復：</strong>request_scans() 定時掃描未同步 UI checkbox → config，導致 global_s3_cfg.enabled / global_s4_cfg.enabled 始終為 False，S3/S4 掃描在 Worker 端被跳過。</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>S4 config enabled 傳遞錯誤：</strong>S4 dispatch 傳給 Worker 的是原始 global_s4_cfg（enabled=False），而非已設定 enabled=True 的 deep copy，導致 Worker 永遠不執行 S4 信號計算。</li>
+                        <li><span class="tag-new">[NEW]</span> <strong>交易紀錄方向美化：</strong>方向欄位從純文字「多/空」改為帶顏色箭頭「▲ 做多」(綠) /「▼ 做空」(紅)，交易紀錄、交易所實倉、模擬倉位三處統一風格。</li>
+                        <li><span class="tag-new">[NEW]</span> <strong>損益% 改為 ROI%：</strong>交易紀錄的百分比從純價格變動%改為基於保證金的 ROI%（= 價格變動% × 槓桿），更準確反映實際投入資金的報酬率。</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>移除無效的模擬倉位按鈕：</strong>移除「全部平倉」與「修改停損」按鈕（功能無實際意義），簡化 UI。</li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- v8.5 -->
             <div class="entry">
                 <div class="version">v8.5 (Live Trading Critical Fix) <span class="date">2026-03-04</span></div>
