@@ -1,5 +1,5 @@
 {
-  "version": "v8.8",
-  "changelog": "BUG修正",
-  "download_url": "https://github.com/frank914/Noisy/releases/download/8.8/NoisyBitgetTrader_v8.8.exe"
+  "version": "v8.9",
+  "changelog": "修復BUG同策略同幣種僅限一單",
+  "download_url": "https://github.com/frank914/Noisy/releases/download/8.9/NoisyBitgetTrader_v8.9.exe"
 }
