@@ -176,6 +176,18 @@
         <div class="timeline">
             <!-- v8.7 -->
             <div class="entry">
+                <div class="version">v8.8 (Per-Strategy Status) <span class="date">2026-03-07</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><strong>分策略狀態顯示</strong> - 市場表格 S1-S4 欄位顯示各策略即時狀態（待機/冷卻/掛單/持倉等）</li>
+                        <li><strong>strategy_status 追蹤</strong> - SymbolState 新增 strategy_status 字典，各策略獨立記錄狀態</li>
+                        <li><strong>狀態文字上色</strong> - 開倉=綠、冷卻/過濾=橘、掛單/觀望=藍、其他=灰</li>
+                        <li><strong>highest/lowest 匯入修復</strong> - strategy3 的 highest/lowest 函數未匯入導致 S3 box 計算崩潰</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
                 <div class="version">v8.7 (S3/S4 Full Fix) <span class="date">2026-03-07</span></div>
                 <div class="changes">
                     <ul>
