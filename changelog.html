@@ -174,7 +174,37 @@
         <h1>更新日誌 Changelog</h1>
 
         <div class="timeline">
-            <!-- v8.7 -->
+            <div class="entry">
+                <div class="version">v9.0 (API Fix + Test Order) <span class="date">2026-03-08</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><strong>TPSL 端點修復</strong> - 止盈/止損改用正確的 place-tpsl-order 端點（修復 planType Illegal type 400172）</li>
+                        <li><strong>測試下單強化</strong> - 開倉後重新取現價計算 SL/TP，避免滑價導致驗證失敗</li>
+                        <li><strong>數量零值防護</strong> - 小額高價幣種精度截斷為 0 時提前警告，不送無效 API 請求</li>
+                        <li><strong>精度查找修復</strong> - get_precision 支援多種幣種格式（BTCUSDT / BTC_USDT_PERP）</li>
+                        <li><strong>取消止損變數名修復</strong> - cancel_plan_res 拼寫錯誤修正為 cancel_res，避免 NameError 崩潰</li>
+                        <li><strong>SL/TP 按鈕 plan_type</strong> - 手動止損按鈕改用 loss_plan、止盈按鈕改用 profit_plan</li>
+                        <li><strong>API 參數日誌</strong> - 測試下單前顯示完整 API 參數，方便除錯</li>
+                        <li><strong>重複 set_leverage 清理</strong> - 移除 bitget_exchange_v2 中重複的方法定義</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- v8.9 -->
+            <div class="entry">
+                <div class="version">v8.9 (Critical Live Fix) <span class="date">2026-03-07</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><strong>平倉 margin mode 修復</strong> - 平倉/止損 API 直接讀系統設定，不再用 position 舊值（修復 400 Bad Request）</li>
+                        <li><strong>平倉失敗防護</strong> - API 平倉失敗不再關閉本地狀態，防止重複開倉</li>
+                        <li><strong>margin mode 自動重試</strong> - 平倉失敗自動切換 crossed↔isolated 重試一次</li>
+                        <li><strong>同策略防重複開倉</strong> - _open_position 加防護，已持倉時忽略重複信號</li>
+                        <li><strong>程式關閉存檔修復</strong> - closeEvent 改用 _save_disk_immediate()，修復重啟後倉位消失</li>
+                        <li><strong>更新器改善</strong> - 清理 _MEI* 暫存，修復更新後 python312.dll 載入失敗</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="entry">
                 <div class="version">v8.8 (Per-Strategy Status) <span class="date">2026-03-07</span></div>
                 <div class="changes">
