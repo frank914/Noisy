@@ -1,5 +1,5 @@
 {
-  "version": "v8.9",
-  "changelog": "止盈止損再次修復",
-  "download_url": "https://github.com/frank914/Noisy/releases/download/8.9/NoisyBitgetTrader_v8.9.exe"
+  "version": "v9.0",
+  "changelog": "止盈止損修復(有測試過)",
+  "download_url": "https://github.com/frank914/Noisy/releases/download/9.0/NoisyBitgetTrader_v9.0.exe"
 }
