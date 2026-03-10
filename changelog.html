@@ -175,6 +175,19 @@
 
         <div class="timeline">
             <div class="entry">
+                <div class="version">v9.1 (S4 Entry Align + Coin Filter) <span class="date">2026-03-10</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>S4 入場邏輯對齊 v8.9：</strong>移除突破確認系統（直接進場）、趨勢過濾改回逆勢阻擋、移除虧損方向冷卻、移除保本機制、TP 目標改用 profit_r</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>S4 出場邏輯對齊 v8.9：</strong>Smart Structure Exit 排除 S4、所有標準出場（Profit Protection/Trend Reversal/Climax/Pin/TypeC 等）排除 S4</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>leverage_per_coin 修復：</strong>回測 S3/S4 改用幣種專屬槓桿（BTC=50x, ETH=50x），修復 flat 20x 導致績效腰斬</li>
+                        <li><span class="tag-new">[NEW]</span> <strong>S4 排除 BTC/ETH：</strong>S4 不再掃描 BTC/ETH（Live + 回測 + UI 同步），UI 表格顯示 ✗</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>LIVE ↔ 回測完全同步：</strong>以上所有改動在 main.py 與 run_backtest_core.py 同步套用</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
                 <div class="version">v9.0 (API Fix + Test Order) <span class="date">2026-03-08</span></div>
                 <div class="changes">
                     <ul>
