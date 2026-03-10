@@ -1,5 +1,5 @@
 {
-  "version": "v9.1",
-  "changelog": "止盈止損修復 S4策略排除BTC/ETH 大提升整體勝率 ---通用設定檔有改要去雲端下載!!!!!",
-  "download_url": "https://github.com/frank914/Noisy/releases/download/9.1/NoisyBitgetTrader_v9.1.exe"
+  "version": "v9.2",
+  "changelog": "通用設定檔有改要去雲端下載!!!!!",
+  "download_url": "https://github.com/frank914/Noisy/releases/download/9.2/NoisyBitgetTrader_v9.2.exe"
 }
