@@ -1,5 +1,5 @@
 {
-  "version": "v9.3",
-  "changelog": ".修正止損止盈==!!!!!",
-  "download_url": "https://github.com/frank914/Noisy/releases/download/9.3/NoisyBitgetTrader_v9.3.exe"
+  "version": "v9.4",
+  "changelog": "修正策略三四開倉!!",
+  "download_url": "https://github.com/frank914/Noisy/releases/download/9.3/NoisyBitgetTrader_v9.4.exe"
 }
