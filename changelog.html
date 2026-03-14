@@ -175,6 +175,29 @@
 
         <div class="timeline">
             <div class="entry">
+                <div class="version">v9.5 (Live Exit Stability) <span class="date">2026-03-14</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>revcheck pending 卡死修復：</strong>長時間運行後 rev_check_pending 永久卡住，導致所有出場機制（反轉止盈/強勢K保盈/箱體/極值止盈等）全部停擺。新增回傳時無條件清除 + 30 秒超時安全網</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>EXE stdout 保護強化：</strong>EXE 雙擊啟動時 sys.stdout/stderr 為 None，S4 掃描 print() 直接 crash 導致信號無法觸發</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>自動平倉 marginMode：</strong>平倉不再送 marginMode 參數，避免逐倉/全倉不一致時 22002 錯誤</li>
+                        <li><span class="tag-new">[NEW]</span> <strong>打包優化：</strong>排除 torch/tensorboard/tensorflow，大幅縮小 EXE 體積與打包時間</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="version">v9.4 (EXE Stability + Close Fix) <span class="date">2026-03-11</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>EXE stdout 修復：</strong>EXE 視窗模式下 sys.stdout/stderr 為 None，導致 S3/S4 掃描靜默失敗（print crash），所有 strategy4.py print 改安全寫法</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>自動平倉 marginMode 修復：</strong>自動偵測平倉不再送 marginMode 參數，避免 22002 "No position to close" 誤判（手動平倉不受影響）</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S2 出場同步按鈕修復：</strong>save_current_cfg AttributeError 修正</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
                 <div class="version">v9.2 (S2 Exit Upgrade + Sync Tool) <span class="date">2026-03-10</span></div>
                 <div class="changes">
                     <ul>
