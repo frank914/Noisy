@@ -175,6 +175,30 @@
 
         <div class="timeline">
             <div class="entry">
+                <div class="version">v9.7 (Deep Bug Fix) <span class="date">2026-03-15</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>SHORT peak_price 追蹤修復：</strong>做空倉位的 peak_price 初始為 0，min(0, price) 永遠為 0，導致所有空單的 Fib trailing / 保盈 / Global TP 完全失效</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>Fib TP tier 標記修復：</strong>exit 失敗時 fib_done 仍被標記為 True，導致該 tier 永遠不會重試</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>Type C exit crash 修復：</strong>rsi_l[i] 未做越界檢查，revcheck crash 導致所有出場機制連鎖停擺</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>S1 scan 異常隔離：</strong>S1 缺少 try-except（S2/S3/S4 都有），一幣 crash 導致所有幣掃描停止</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>closeEvent 資源清理：</strong>關閉程式時停止 8 個 QTimer + worker thread，防止殭屍進程</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>30+ 除以零保護：</strong>strategy2/4、trading_core、run_backtest_core 全面加入 entry/price/denom > 0 檢查</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S4 warmup 改善：</strong>首次啟動保留最新 BOS 而非全部跳過，啟動後立刻可進場</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S4 TP1 done 標記：</strong>API 失敗時不再標記 done，允許重試</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>smart_wick_exit 移除：</strong>空殼功能（UI 有設定但無邏輯），清除避免混淆</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>同步倉位補齊欄位：</strong>rev_check_pending / peak_price / trend_at_entry 等，確保出場機制正常</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>匯入幣種雙模式初始化：</strong>sim/live positions 同時建立，切換模式不再消失</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S2 出場同步存檔：</strong>複製設定後自動存檔，重啟不遺失</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>Climax exit kl_data 保護：</strong>避免 kl_data 未定義時 NameError</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>DC worker 錯誤日誌：</strong>不再靜默吃掉異常，加 error log + sleep 防風暴</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>Bitget API 防護：</strong>data=None 不再 crash fetch_klines / get_pending_plan_orders</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>Position dataclass 補齊：</strong>rev_check_pending / last_rev_check_sent / s3_entry_time_ms 正式納入</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
                 <div class="version">v9.5 (Live Exit Stability) <span class="date">2026-03-14</span></div>
                 <div class="changes">
                     <ul>
