@@ -1,5 +1,5 @@
 {
-  "version": "v9.8",
-  "changelog": "修正S4有單就不觸發",
-  "download_url": "https://github.com/frank914/Noisy/releases/download/9.8/NoisyBitgetTrader_v9.8.exe"
+  "version": "v9.9",
+  "changelog": "止盈調整",
+  "download_url": "https://github.com/frank914/Noisy/releases/download/9.8/NoisyBitgetTrader_v9.9.exe"
 }
