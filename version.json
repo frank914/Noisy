@@ -1,5 +1,5 @@
 {
-  "version": "v9.9",
-  "changelog": "止盈調整",
-  "download_url": "https://github.com/frank914/Noisy/releases/download/9.8/NoisyBitgetTrader_v9.9.exe"
+  "version": "v10.0",
+  "changelog": "止盈調整 修正極值止盈過敏 新增鎖定參數功能",
+  "download_url": "https://github.com/frank914/Noisy/releases/download/9.8/NoisyBitgetTrader_v10.0.exe"
 }
