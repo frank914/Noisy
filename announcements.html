@@ -203,14 +203,15 @@
         </header>
 
         <section class="announcements">
-            <!-- v10.1 -->
+            <!-- v10.2 -->
             <article class="card">
                 <div class="card-date">2026.03.17</div>
-                <h2>v10.1 深度審計 — 32 項修復 <span class="tag new">NEW</span></h2>
-                <p>Noisy Bitget Trader v10.1 完成史上最全面的程式碼審計！
-                    修復 8 項致命 Bug：Dict 迭代崩潰、Flipcheck 倉位查找失敗、多策略平倉數量錯誤、MAIN 入場比例遺漏、S4 冷卻時間 48 倍過長等。
-                    加固 24 項穩定性問題：除以零保護、Position 欄位補齊、指標 None 值防護、NetWorker 優雅關閉、live_state 只存開倉等。
-                    強烈建議所有用戶立即更新，尤其是實盤交易者。
+                <h2>v10.2 止損競態修復 + 精度修正 <span class="tag new">NEW</span></h2>
+                <p>Noisy Bitget Trader v10.2 修復實盤關鍵問題！
+                    止損 Race Condition：程式與交易所 TPSL 同時觸發導致雙重平倉和 dust 殘留。現在程式會先確認交易所止損單狀態再決定是否介入。
+                    止損 40834 錯誤：止損價在現價錯側時自動調整再掛，確保交易所端永遠有止損保護。
+                    浮點精度：修復 math.floor 雙重截斷導致下單數量偏差的問題。
+                    含 v10.1 全部 32 項修復。強烈建議所有實盤用戶立即更新。
                 </p>
             </article>
 

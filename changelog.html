@@ -175,6 +175,17 @@
 
         <div class="timeline">
             <div class="entry">
+                <div class="version">v10.2 (Stop Loss Race Fix) <span class="date">2026-03-17</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>止損 Race Condition 修復：</strong>程式備援止損與交易所 TPSL 同時觸發導致雙重平倉 + dust 殘留倉位。現在程式偵測止損時先查詢交易所止損單狀態，有單則讓交易所處理</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>止損 40834 智慧重試：</strong>止損價在現價錯側時不再跳過交易所保護，改為自動調整到現價 ±0.2% 掛單；API 失敗再以 ±0.3% 重試</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>浮點雙重截斷修復：</strong>place_order / place_trigger_order 的 math.floor 改為 round，修復 0.0341×10000=340.999 被截成 340 的浮點精度問題</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
                 <div class="version">v10.1 (Deep Audit & Stability) <span class="date">2026-03-17</span></div>
                 <div class="changes">
                     <ul>
