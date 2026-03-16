@@ -175,6 +175,38 @@
 
         <div class="timeline">
             <div class="entry">
+                <div class="version">v10.1 (Deep Audit & Stability) <span class="date">2026-03-17</span></div>
+                <div class="changes">
+                    <ul>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>Dict 迭代崩潰修復：</strong>持倉迴圈中平倉移除 key 導致 RuntimeError，改用 list() 複製</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>Flipcheck 倉位查找修復：</strong>positions key 格式為 sym:MAIN，修復 get(sym) 永遠找不到的問題</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>22002 多策略平倉修復：</strong>交易所恢復平倉只關閉該策略數量，不再清空整個交易所倉位</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>MAIN 策略 entry_pct 遺漏：</strong>開倉數量計算未套用入場比例，導致永遠全倉進場</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>Position key 格式統一：</strong>sim/live positions 統一使用 sym:MAIN 格式，修復 4 處不一致</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>S4 冷卻時間框架修復：</strong>冷卻計算從錯誤的 HTF(4H) 改回 LTF(5M)，修復冷卻時間 48 倍過長</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>exit_by_pct is_open 修復：</strong>部分出場後 qty_remain≈0 時正確設定 is_open=False</li>
+                        <li><span class="tag-fix">[CRITICAL]</span> <strong>apply_tp is_open 修復：</strong>止盈出場後同樣檢查並更新 is_open 狀態</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>30+ 除以零保護：</strong>所有 p.entry 計算前加入 > 0 檢查</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>全部出清後 continue：</strong>qty_remain≈0 平倉後缺少 continue，後續邏輯繼續操作已關閉倉位</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>極值保護空操作修復：</strong>cycle_exited 後 qty≈0 時 pass 改為實際平倉</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>Flip try/finally 保護：</strong>反轉開倉失敗時確保 cfg.amount_usdt 恢復原值</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>live_state 只存開倉：</strong>關閉的倉位不再寫入 live_state.json，避免檔案無限膨脹</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>Position.logs 裁剪：</strong>存檔前限制每個倉位 logs≤100 條，防止 JSON 暴增</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>NetWorker 優雅關閉：</strong>新增 stop() + timeout join，防止殭屍線程</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>本地數量精度同步：</strong>開倉數量與交易所精度對齊，避免 API 拒絕</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>手動 TP 取消舊單：</strong>設新止盈前先取消同方向既有止盈單</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>部分減倉偵測：</strong>交易所倉位 < 本地 95% 時自動同步並更新止損</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>S4 Position 欄位補齊：</strong>16 個 S4 相關欄位正式納入 dataclass</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>stdev/rsi None 值保護：</strong>指標函數遇到 None 不再 crash</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>重複函數名修復：</strong>exit_by_pct 重名改為 _exit_by_pct_of_remain</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>DC worker 停止信號：</strong>改用 dict sentinel 避免 None 導致 worker 意外死亡</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>Loop 異常日誌：</strong>主迴圈 except 加入完整 traceback</li>
+                        <li><span class="tag-fix">[FIX]</span> <strong>dead code 清理：</strong>移除 trading_core 中不可達代碼與重複 return</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
                 <div class="version">v9.7 (Deep Bug Fix) <span class="date">2026-03-15</span></div>
                 <div class="changes">
                     <ul>
