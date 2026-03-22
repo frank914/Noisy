@@ -1,5 +1,5 @@
 {
-  "version": "v10.3",
-  "changelog": "修正bug 更新S5中",
-  "download_url": "https://github.com/frank914/Noisy/releases/download/10.3/NoisyBitgetTrader_v10.3.exe"
+  "version": "v10.4",
+  "changelog": "修正大部分s2開單、止盈止損異常 新增推薦預設參數功能(ETH有改動記得案)",
+  "download_url": "https://github.com/frank914/Noisy/releases/download/10.4/NoisyBitgetTrader_v10.4.exe"
 }
