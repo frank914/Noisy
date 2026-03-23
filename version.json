@@ -1,5 +1,5 @@
 {
-  "version": "v10.5",
+  "version": "v10.6",
   "changelog": "推薦預設參數功能記得按 S1補上大量幣種 S2修正BUG 注意:可能一次近10單 每單金額請在整個帳戶的15分之1左右才不會少開單",
-  "download_url": "https://github.com/frank914/Noisy/releases/download/10.5/NoisyBitgetTrader_v10.5.exe"
+  "download_url": "https://github.com/frank914/Noisy/releases/download/10.5/NoisyBitgetTrader_v10.6.exe"
 }
