@@ -1,5 +1,5 @@
 {
-  "version": "v10.7",
-  "changelog": "新增權益金功能 推薦預設參數功能記得按 S1補上大量幣種 S2修正BUG 注意:可能一次近10單 每單金額請在整個帳戶的15分之1左右才不會少開單",
-  "download_url": "https://github.com/frank914/Noisy/releases/download/10.5/NoisyBitgetTrader_v10.7.exe"
+  "version": "v10.8",
+  "changelog": "權益百分比建議7% 調整止盈止損速度",
+  "download_url": "https://github.com/frank914/Noisy/releases/download/10.5/NoisyBitgetTrader_v10.8.exe"
 }
