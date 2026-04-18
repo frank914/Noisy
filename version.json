@@ -1,5 +1,5 @@
 {
   "version": "v12.4",
   "changelog": "程式優化(非策略更動/非BUG修復) GC回收優化(避免記憶體無限跌加)",
-  "download_url": "https://github.com/frank914/Noisy/releases/download/12.5/NoisyBitgetTrader_v12.5.exe"
+  "download_url": "https://github.com/frank914/Noisy/releases/download/12.4/NoisyBitgetTrader_v12.4.exe"
 }
